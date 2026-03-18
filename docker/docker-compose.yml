@@ -1,11 +1,14 @@
 version: "3.9"
 
+name: sql-injection
+
 services:
   postgres:
     image: postgres:latest
+    container_name: postgres-sql-injection
     restart: always
     ports:
-      - "5432:5432"
+      - "5435:5432"
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
